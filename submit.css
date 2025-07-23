@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding: 40px 20px;
+}
+
+/* Geometric background elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 49%, rgba(255, 255, 255, 0.02) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.02) 49%, rgba(255, 255, 255, 0.02) 51%, transparent 52%);
+    background-size: 120px 120px, 120px 120px;
+    z-index: -2;
+}
+
+/* Floating circles */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.08) 80px, transparent 80px),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.05) 120px, transparent 120px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.06) 100px, transparent 100px),
+        radial-gradient(circle at 25% 85%, rgba(255, 255, 255, 0.04) 90px, transparent 90px);
+    z-index: -1;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+    border: none;
+}
+
+/* Header */
+h2 {
+    color: #2a5298;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    color: #1f2937;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+/* Student Info Section */
+.student-info {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+}
+
+.student-info p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #374151;
+}
+
+.student-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Labels */
+.label {
+    font-weight: 600;
+    color: #1f2937;
+    margin-right: 8px;
+}
+
+/* Score Display */
+.score {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Button Styles */
+.btn {
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(42, 82, 152, 0.3);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Review button icon */
+.btn::before {
+    content: "👁️";
+    font-size: 16px;
+}
+
+/* Answers Section */
+#answersSection {
+    display: none;
+    margin-top: 30px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Question Blocks */
+.question-block {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.question-block:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #d1d5db;
+}
+
+.question-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-block p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.question-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Question styling */
+.question-block p:first-child {
+    color: #1f2937;
+    font-weight: 600;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+/* Answer styling */
+.question-block p:last-child {
+    color: #4b5563;
+    background: #f9fafb;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid #2a5298;
+    margin-top: 8px;
+}
+
+/* Thank you message */
+.thank-you {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.thank-you::before {
+    content: "🎉 ";
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    .student-info {
+        padding: 20px;
+    }
+    
+    .student-info p {
+        font-size: 15px;
+    }
+    
+    .score {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 24px;
+    }
+    
+    .question-block {
+        padding: 16px;
+    }
+    
+    .question-block p {
+        font-size: 15px;
+    }
+    
+    .thank-you {
+        font-size: 16px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .student-info {
+        padding: 16px;
+    }
+    
+    .question-block {
+        padding: 14px;
+    }
+}
